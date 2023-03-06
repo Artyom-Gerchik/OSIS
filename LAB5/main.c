@@ -5,7 +5,12 @@
 
 void INThandler (int sig)
 {
-    fork();
+    pid_t pid;
+    pid = fork();
+    
+    if(pid != 0){
+        exit(0);
+    }
 }
 
 int main()
